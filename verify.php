@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db="stock";
+$db="Stock";
 // Create connection
 $conn = new mysqli($servername, $username, $password,$db);
 
@@ -10,23 +10,23 @@ $conn = new mysqli($servername, $username, $password,$db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-echo "Connected successfully";
+
 
 $uname=$_POST['uname'];
 $pw=$_POST['pword'];
 
-$sql="SELECT * FROM user WHERE username='$uname' AND password='$pw'";
+$sql="SELECT * FROM users WHERE username='$uname' AND password='$pw'";
 
 $result = mysqli_query($conn,$sql);
-$count=mysqli_num_rows($result);
+$count= mysqli_num_rows($result);
 if($count>0)
 {
-	echo "success";
+	header('Location: Stock.php');
 }
 else
 {
-	echo "failure";
-	
+	echo "username or password incorrect";
 	header('Location: login.php');
+	
 }
 ?>
