@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +37,7 @@ background: url(bg.jpg) no-repeat center center/cover;
                <br/>
                <br/>
                
-                <h1 id='A1'>WELCOME USER</h1>
+                <h1 id='A1'>Welcome <?php echo ucfirst($_SESSION["user"] )?></h1>
                 <br/>
                 
                <br/>

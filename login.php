@@ -92,6 +92,7 @@ margin-left: 4px;
 	</style>
 </head>
 <body>
+	
 	<div class="" style=""><center><h1 style="font-family:Algerian;font-style:italic; padding-top: 2.5em;">stock management</h1></center></div>
 <div class="container">
 	<div class="d-flex justify-content-center h-100" style="padding-bottom: 14em;">

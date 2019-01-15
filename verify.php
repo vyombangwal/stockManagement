@@ -1,4 +1,6 @@
 <?php
+
+	
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -21,6 +23,8 @@ $result = mysqli_query($conn,$sql);
 $count= mysqli_num_rows($result);
 if($count>0)
 {
+	session_start();
+	$_SESSION["user"] = $uname;
 	header('Location: index.php?user='.$uname);
 }
 else
