@@ -1,27 +1,16 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db="stock";
-// Create connection
-$conn = new mysqli($servername, $username, $password,$db);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+include "navbar.php";
 ?>
 <html>
 <head>
 	</head>
 	<title>
-		
+		 
 	</title>
 	<body>
 <?php
-	$sql="SELECT table_name FROM information_schema.tables  
-WHERE table_schema = 'stock'  
-AND table_name NOT LIKE 'users'  ";
+	$sql="SELECT TABLE_NAME FROM information_schema.tables 
+	WHERE table_schema = 'stock' AND TABLE_NAME NOT LIKE 'users'";
 	$result=mysqli_query($conn,$sql);
 	?>
 <form action="newsubcatcreated.php" method="POST">
@@ -41,16 +30,7 @@ AND table_name NOT LIKE 'users'  ";
 	?>
 	ENTER NAME:<input type="text" name="subcatname" required><br>
 	ENTER QUAN:<input type="text" name="subcatquan" required><br>
-	<input type="submit" name="submit">	
-	<?php 
-
-?>
-	
-</form>
-
-
-
-
-
-	</body>
+	<input type="submit">	
+	</form>
+</body>
 	</html>

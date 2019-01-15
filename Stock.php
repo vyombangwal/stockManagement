@@ -1,15 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db="stock";
-// Create connection
-$conn = new mysqli($servername, $username, $password,$db);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+include "navbar.php";
 ?>
 <html>
 <head>
@@ -19,9 +9,8 @@ if ($conn->connect_error) {
 	<body>
 
 	<?php
-	$sql="SELECT table_name FROM information_schema.tables  
-WHERE table_schema = 'stock'  
-AND table_name NOT LIKE 'users' ";
+	$sql="SELECT TABLE_NAME FROM information_schema.tables 
+	WHERE table_schema = 'stock' AND TABLE_NAME NOT LIKE 'users'";
 	$result=mysqli_query($conn,$sql);
 	?>
 

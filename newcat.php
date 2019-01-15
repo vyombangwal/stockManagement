@@ -1,4 +1,6 @@
-
+<?php
+include "navbar.php";
+?>
 <html>
 <head>
 </head>
